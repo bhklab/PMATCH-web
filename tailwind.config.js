@@ -5,7 +5,14 @@ module.exports = {
     content: ['./src/**/**/*.{js,ts,jsx,tsx,html,mdx}', './src/**/*.{js,ts,jsx,tsx,html,mdx}'],
     darkMode: 'class',
     theme: {
-        screens: { md: { max: '1050px' }, smd: { max: '800px' }, mmd: { max: '700px' }, sm: { max: '550px' } },
+        screens: {
+            xl: { max: '1600px' },
+            lg: { max: '1200px' },
+            md: { max: '1050px' },
+            smd: { max: '800px' },
+            mmd: { max: '700px' },
+            sm: { max: '550px' }
+        },
         extend: {
             colors: {
                 black: { 900: '#000000', '900_0c': '#0000000c' },
@@ -38,6 +45,7 @@ module.exports = {
             },
             fontFamily: { inter: 'Inter' },
             fontSize: {
+                heading3Xl: ['32px', '36px'],
                 heading2Xl: ['28px', '32px'],
                 headingXl: ['24px', '28px'],
                 headingLg: ['20px', '24px'],

@@ -7,7 +7,7 @@ const Navbar = () => {
     const [activeLink, setActiveLink] = useState('');
     const [isScrolled, setIsScrolled] = useState(false);
 
-    const links = ['mission', 'overview', 'goals', 'team', 'stakeholders'];
+    const links = ['mission', 'overview', 'team', 'stakeholders'];
 
     const handleSetActive = to => {
         setActiveLink(to);
@@ -32,7 +32,7 @@ const Navbar = () => {
     return (
         <div
             className={`fixed top-0 z-20 w-full px-16 md:px-1 py-3 border-b-1 duration-300 ease-in-out flex flex-row items-center justify-between ${
-                isScrolled ? 'bg-white border-black-900' : 'bg-transparent border-none'
+                isScrolled ? 'bg-white shadow-xl' : 'bg-transparent border-none'
             }`}
         >
             <div
@@ -41,7 +41,7 @@ const Navbar = () => {
                     navigate('/');
                 }}
             >
-                <img src="/images/pmatch-logo.png" alt="PMATCH logo" className="w-50" />
+                <img src="/images/icons/pmatch-logo.png" alt="PMATCH logo" className="w-50" />
             </div>
             <div className="flex space-x-4">
                 {links.map(link => (
