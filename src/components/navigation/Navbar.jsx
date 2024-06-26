@@ -7,7 +7,7 @@ const Navbar = () => {
     const [activeLink, setActiveLink] = useState('');
     const [isScrolled, setIsScrolled] = useState(false);
 
-    const links = ['mission', 'overview', 'team', 'stakeholders'];
+    const links = ['mission', 'overview', 'team', 'support', 'future'];
 
     const handleSetActive = to => {
         setActiveLink(to);
@@ -15,7 +15,7 @@ const Navbar = () => {
 
     // If scrolled, change background from transparent to white
     const handleScroll = () => {
-        if (window.scrollY > 500) {
+        if (window.scrollY > 200) {
             setIsScrolled(true);
         } else {
             setIsScrolled(false);
@@ -35,14 +35,9 @@ const Navbar = () => {
                 isScrolled ? 'bg-white shadow-xl' : 'bg-transparent border-none'
             }`}
         >
-            <div
-                className="hover:cursor-pointer"
-                onClick={() => {
-                    navigate('/');
-                }}
-            >
+            <Link to="landing" smooth={true} duration={500} offset={-325} className="hover:cursor-pointer">
                 <img src="/images/icons/pmatch-logo.png" alt="PMATCH logo" className="w-50" />
-            </div>
+            </Link>
             <div className="flex space-x-4">
                 {links.map(link => (
                     <Link
@@ -50,6 +45,7 @@ const Navbar = () => {
                         to={link}
                         smooth={true}
                         duration={500}
+                        offset={-75}
                         className={`hover:text-red-1000 cursor-pointer ${
                             activeLink === link ? 'text-red-1000' : isScrolled ? 'text-black-900' : 'text-white'
                         }`}

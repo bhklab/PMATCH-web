@@ -73,10 +73,12 @@ module.exports = {
             spacing: {
                 800: '800px',
                 50: '196px'
-            },
-            backgroundImage: {
-                'pmatch-bg': "url('/images/pmatch-wallpaper.png')"
             }
+        }
+    },
+    variants: {
+        extend: {
+            backgroundAttachment: ['responsive']
         }
     },
     plugins: [require('@tailwindcss/forms')]

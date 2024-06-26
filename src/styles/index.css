@@ -9,10 +9,11 @@
 .pro-sidebar {
     height: 100vh !important;
 }
-body {
+html, body {
     font-family: 'Inter', 'Roboto', sans-serif !important;
     margin: 0;
     padding: 0;
+	height: 100%;
 }
 .dhiwise-code,
 .dhiwise-navigation {

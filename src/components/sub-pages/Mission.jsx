@@ -2,8 +2,11 @@ import React from 'react';
 
 const Mission = () => {
     return (
-        <div className="flex flex-col items-center justify-center bg-white px-96 xl:px-32 mmd:px-4 py-14" id="mission">
-            <h1 className="text-red-1000 text-5xl font-bold mb-8 text-center">Mission</h1>
+        <div
+            className="flex flex-col items-center justify-center bg-white px-96 xl:px-60 mmd:px-4 sm:px-1 py-16"
+            id="mission"
+        >
+            <h1 className="text-red-1000 text-5xl font-bold mb-8 text-center">Our Mission</h1>
             <p className="text-lg text-center">
                 The PMATCH project aims to streamline the process of matching cancer patients with clinical trials by
                 developing an AI-driven platform. This will simplify the process for doctors and researchers, making it

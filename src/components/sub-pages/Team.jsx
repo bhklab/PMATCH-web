@@ -21,12 +21,9 @@ const Team = () => {
     ];
 
     return (
-        <div className="py-14 px-20 flex flex-col justify-center items-center" id="overview">
-            <h1 className="text-5xl text-center font-bold mb-10 text-red-1000">Team and Stakeholders</h1>
-            <div
-                className="flex flex-row sm:flex-col gap-8 justify-center items-center text-center flex-wrap"
-                id="team"
-            >
+        <div className="py-14 px-10 flex flex-col justify-center items-center" id="team">
+            <h1 className="text-5xl text-center font-bold mb-10 text-red-1000 ">Team</h1>
+            <div className="flex flex-row sm:flex-col gap-8 justify-center items-center text-center flex-wrap">
                 {teams.map(team => (
                     <a href={team.link} target="_blank">
                         <div className="flex flex-col px-10 py-10 md:px-6 md:py-6 shadow-lg gap-8 justify-between items-center border-solid border-1 rounded-lg w-[300px] h-[300px] transition duration-500 hover:scale-110 hover:cursor hover:border-red-1000 hover:shadow-red-1000">
@@ -42,9 +39,10 @@ const Team = () => {
                 ))}
             </div>
             <hr className="my-10 w-1/2" />
+            <h1 className="text-5xl text-center font-bold mb-10 text-red-1000">Supported By</h1>
             <div
                 className="flex flex-row sm:flex-col gap-8 justify-center items-center text-center flex-wrap"
-                id="stakeholders"
+                id="support"
             >
                 {stakeholders.map(team => (
                     <a href={team.link} target="_blank">
