@@ -14,7 +14,7 @@ const Overview = () => {
         }
     ];
     return (
-        <div className="py-14 px-60 mmd:px-4" id="overview">
+        <div className="py-14 px-60 md:px-24 smd:px-4" id="overview">
             <h1 className="text-red-1000 text-5xl font-bold mb-8 text-center">Overview</h1>
             <p className="text-headingLg text-center font-bold mb-8">
                 PMATCH will serve as a new digital tool that will...

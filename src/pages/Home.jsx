@@ -14,10 +14,8 @@ const Home = () => {
             <Mission />
             <Break image="puzzle-pieces.png" />
             <Overview />
-            <Break image="red-heart.jpg" />
+            <Break image="doctor-patient-2.png" />
             <Team />
-            {/* <Break image="puzzle-pieces.png" /> */}
-            {/* <Future /> */}
             <Footer />
         </div>
     );
