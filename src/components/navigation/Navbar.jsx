@@ -7,7 +7,7 @@ const Navbar = () => {
     const [activeLink, setActiveLink] = useState('');
     const [isScrolled, setIsScrolled] = useState(false);
 
-    const links = ['mission', 'overview', 'team', 'support', 'future'];
+    const links = ['mission', 'overview', 'team'];
 
     const handleSetActive = to => {
         setActiveLink(to);
@@ -35,7 +35,7 @@ const Navbar = () => {
                 isScrolled ? 'bg-white shadow-xl' : 'bg-transparent border-none'
             }`}
         >
-            <Link to="landing" smooth={true} duration={500} offset={-325} className="hover:cursor-pointer">
+            <Link to="landing" smooth={true} duration={700} offset={-325} className="hover:cursor-pointer">
                 <img src="/images/icons/pmatch-logo.png" alt="PMATCH logo" className="w-50" />
             </Link>
             <div className="flex space-x-4">

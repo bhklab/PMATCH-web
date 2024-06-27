@@ -14,7 +14,7 @@ const Overview = () => {
         }
     ];
     return (
-        <div className="py-14 px-96 xl:px-60 mmd:px-4 sm:px-1" id="overview">
+        <div className="py-14 px-60 mmd:px-4" id="overview">
             <h1 className="text-red-1000 text-5xl font-bold mb-8 text-center">Overview</h1>
             <p className="text-headingLg text-center font-bold mb-8">
                 PMATCH will serve as a new digital tool that will...
@@ -32,13 +32,14 @@ const Overview = () => {
                 ))}
             </div>
             <h2 className="text-headingXl font-bold mb-8">Design & Implementation</h2>
-            <p className="text-lg mb-10">
+            <p className="text-lg md:text-md mb-10">
                 PMATCH has five parts – CTIMS, OCOGRAPHER, GENOMICS, MATCHER, and VIEWER – that bring together all the
                 information needed for clinical trial matching{' '}
                 <Link
                     to={'figure-1'}
                     smooth={true}
                     duration={500}
+                    offset={-100}
                     className="text-red-1000 hover:underline cursor-pointer"
                 >
                     (Figure 1)
@@ -50,13 +51,13 @@ const Overview = () => {
                 data.
             </p>
             <h2 className="text-headingXl font-bold mb-8">Long Term Vision & Future Developments</h2>
-            <p className="text-lg" id="figure-1">
+            <p className="text-lg">
                 PMATCH will be a flexible system that makes it easy to match cancer patients with clinical trials in a
                 fair and efficient way. In five years, we hope to see PMATCH used across all major Canadian cancer
                 centers. In the future, patients may be able to use PMATCH directly to learn about trials they could
                 join, allowing them to make the most of their time spent with doctors.
             </p>
-            <div className="w-full py-10">
+            <div className="w-full py-10" id="figure-1">
                 <img src="/images/diagrams/workflow-diagram.jpg" className="w-full" />
             </div>
         </div>

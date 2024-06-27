@@ -76,10 +76,5 @@ module.exports = {
             }
         }
     },
-    variants: {
-        extend: {
-            backgroundAttachment: ['responsive']
-        }
-    },
     plugins: [require('@tailwindcss/forms')]
 };

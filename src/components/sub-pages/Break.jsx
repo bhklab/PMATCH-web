@@ -1,11 +1,15 @@
 import React from 'react';
 
 const Break = ({ image }) => {
+    console.log(image);
     return (
         <div className="w-full">
-            <div
-                className={`bg-[url('/images/breaks/${image}')] h-[400px] bg-no-repeat bg-cover bg-center bg-fixed mmd:bg-scroll`}
-            />
+            {image && (
+                <div
+                    className={`h-[500px] bg-no-repeat bg-cover bg-center bg-fixed mmd:bg-scroll`}
+                    style={{ backgroundImage: `url('/images/breaks/${image}')` }}
+                />
+            )}
         </div>
     );
 };
