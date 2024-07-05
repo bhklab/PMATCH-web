@@ -13,18 +13,18 @@ const Team = () => {
                 'The BHK Lab, headed by Dr. Benjamin Haibe-Kains, develops cutting-edge computational tools and predictive models in an effort to identify new cancer vulnerabilities and improve the way precision oncology is delivered to patients.'
         },
         {
-            name: 'Pugh Lab',
-            img: '/images/teams/pugh-lab.png',
-            link: 'https://pughlab.org/',
-            description:
-                'The Pugh Lab, headed by Dr. Trevor Pugh, is focused on the applications of genome sequencing analysis as a routine clinical test and understanding clinical implications of clonal shifts in cancer and non-cancerous cell populations during treatment, most recently using cell-free DNA, immune repertoire, and single cell RNA-seq sequencing.'
-        },
-        {
             name: 'Cancer Digital Intelligence',
             img: '/images/teams/CDI.png',
             link: 'https://pmcdi.ca/',
             description:
                 'The Cancer Digital Intelligence (CDI) is a research and innovation program within Princess Margaret Cancer Centre, providing a strong foundation in Software Development, Data Science and Analytics while developing the robust data infrastructure to advance novel applications of data science and artificial intelligence methods.'
+        },
+        {
+            name: 'Pugh Lab',
+            img: '/images/teams/pugh-lab.png',
+            link: 'https://pughlab.org/',
+            description:
+                'The Pugh Lab, headed by Dr. Trevor Pugh, is focused on the applications of genome sequencing analysis as a routine clinical test and understanding clinical implications of clonal shifts in cancer and non-cancerous cell populations during treatment, most recently using cell-free DNA, immune repertoire, and single cell RNA-seq sequencing.'
         },
         {
             name: 'Wang Lab',

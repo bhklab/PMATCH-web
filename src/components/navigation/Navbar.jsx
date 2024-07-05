@@ -7,7 +7,7 @@ const Navbar = () => {
     const [activeLink, setActiveLink] = useState('');
     const [isScrolled, setIsScrolled] = useState(false);
 
-    const links = ['mission', 'overview', 'team'];
+    const links = ['mission', 'overview', 'team', 'news'];
 
     const handleSetActive = to => {
         setActiveLink(to);

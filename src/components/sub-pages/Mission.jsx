@@ -19,8 +19,8 @@ const Mission = () => {
             <hr className="w-3/4 my-8" />
             <p className="text-lg text-center">
                 <span className="font-bold text-xl">Our impact</span> aims to address the fact that less than 5% of
-                cancer patients join clinical trials, even though 70% of them would do so given the opportunity [1,2].
-                By using PMATCH to find the right people quickly, we can improve patients’ access to high-quality care,
+                cancer patients join clinical trials, even though 70% of them would do so given the opportunity. By
+                using PMATCH to find the right people quickly, we can improve patients’ access to high-quality care,
                 help researchers develop better therapies, and save money in the process. Clinical trials are expensive
                 to conduct, and many trials struggle to enroll enough participants to answer the research questions
                 being studied. PMATCH will also make things easier for busy healthcare professionals by cutting down the
