@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Break = ({ image }) => {
-    console.log(image);
     return (
         <div className="w-full">
             {image && (
