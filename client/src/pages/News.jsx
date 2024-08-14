@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { InputText } from 'primereact/inputtext';
 import { InputTextarea } from 'primereact/inputtextarea';
 import { Message } from 'primereact/message';
 import { Calendar } from 'primereact/calendar';
 import { Button } from 'primereact/button';
+import { Toast } from 'primereact/toast';
 
 import axios from 'axios';
 
@@ -14,6 +15,8 @@ const News = () => {
     const [date, setDate] = useState('');
     const [passcode, setPasscode] = useState('');
 
+    const toast = useRef(null);
+
     const submitNews = async () => {
         try {
             const res = await axios.post('http://localhost:2000/api/news', {
@@ -23,9 +26,19 @@ const News = () => {
                 date,
                 passcode
             });
-            console.log(res);
+            toast.current.show({
+                severity: res.status != 200 ? 'error' : 'success',
+                summary: `Status code: ${res.status}`,
+                detail: res.data,
+                sticky: true
+            });
         } catch (error) {
-            console.log(error.response);
+            toast.current.show({
+                severity: error.response.status != 200 ? 'error' : 'success',
+                summary: `Status code: ${error.response.status}`,
+                detail: error.response.data,
+                sticky: true
+            });
         }
     };
 
@@ -89,6 +102,7 @@ const News = () => {
                     </div>
                 </div>
             </div>
+            <Toast ref={toast} />
         </div>
     );
 };

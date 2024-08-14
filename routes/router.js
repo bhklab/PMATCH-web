@@ -20,7 +20,7 @@ router.post('/news', async (req, res)  => {
 					author: req.body.author
 				}
 			)
-			res.status(200).send(`successfully inserted news article under the title ${req.body.title}`);
+			res.status(200).send(`Successfully inserted news article under the title "${req.body.title}"`);
 		} catch (error) {
 			res.status(400).send(`Could not insert news article due to a error: ${error}`);
 		}
