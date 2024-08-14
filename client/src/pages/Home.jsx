@@ -6,10 +6,12 @@ import Team from '../components/sub-pages/Team';
 import Break from '../components/sub-pages/Break';
 import Footer from '../components/navigation/Footer';
 import News from '../components/sub-pages/News';
+import Navbar from '../components/navigation/Navbar';
 
 const Home = () => {
     return (
         <div className="w-full flex flex-col">
+            <Navbar />
             <Landing />
             <Mission />
             <Break image="puzzle-pieces.png" />
