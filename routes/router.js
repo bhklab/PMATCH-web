@@ -9,39 +9,60 @@ router.get('/news', async (req, res)  => {
 });
 
 router.post('/news', async (req, res)  => {
-	const news = await News.insertMany([
-		{
-			title: "Prioritizer Deployment",
-			description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
-			date: new Date(),
-			author: "Paul Brogee"
-		},
-		{
-			title: "Matcher Deployment",
-			description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
-			date: new Date(),
-			author: "Benjamin, Haibe-kains"
-		},
-		{
-			title: "CTIMS Update",
-			description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
-			date: new Date(),
-			author: "Benjamin, Grant"
-		},
-		{
-			title: "Match Algorithm Update",
-			description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
-			date: new Date(),
-			author: "Benjamin, Grant"
-		},
-		{
-			title: "New Collaborator Announcement",
-			description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
-			date: new Date(),
-			author: "Benjamin, Grant"
+	console.log(req.body);
+	if (req.body.passcode == process.env.PASS){
+		try {
+			const news = await News.create(
+				{
+					title: req.body.title,
+					description: req.body.description,
+					date: req.body.date === '' || req.body.date === null ? new Date() : new Date(req.body.date),
+					author: req.body.author
+				}
+			)
+			res.status(200).send(`successfully inserted news article under the title ${req.body.title}`);
+		} catch (error) {
+			res.status(400).send(`Could not insert news article due to a error: ${error}`);
 		}
-	])
-	res.send(`inserted ${news.length} documents into news collection`)
+	}
+	else{
+		res.status(401).send('Incorrect passcode, please retry again with the correct passcode');
+	}
+
+
+	// const news = await News.insertMany([
+	// 	{
+	// 		title: "Prioritizer Deployment",
+	// 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
+	// 		date: new Date(),
+	// 		author: "Paul Brogee"
+	// 	},
+	// 	{
+	// 		title: "Matcher Deployment",
+	// 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
+	// 		date: new Date(),
+	// 		author: "Benjamin, Haibe-kains"
+	// 	},
+	// 	{
+	// 		title: "CTIMS Update",
+	// 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
+	// 		date: new Date(),
+	// 		author: "Benjamin, Grant"
+	// 	},
+	// 	{
+	// 		title: "Match Algorithm Update",
+	// 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
+	// 		date: new Date(),
+	// 		author: "Benjamin, Grant"
+	// 	},
+	// 	{
+	// 		title: "New Collaborator Announcement",
+	// 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
+	// 		date: new Date(),
+	// 		author: "Benjamin, Grant"
+	// 	}
+	// ])
+	// res.send(`inserted ${news.length} documents into news collection`)
 });
 
 module.exports = router;

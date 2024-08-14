@@ -207,3 +207,7 @@ ul li a {
 .p-tooltip {
     font-size: 12px;
 }
+
+.p-inputtext{
+	border-radius: 10px !important;
+}

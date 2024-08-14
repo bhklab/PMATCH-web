@@ -27,7 +27,7 @@ const News = () => {
         const getNews = async () => {
             try {
                 const res = await axios.get('http://localhost:2000/api/news');
-                setNews(res.data);
+                setNews(res.data.sort((a, b) => new Date(b.date) - new Date(a.date)));
             } catch (error) {
                 console.log(error);
             }
