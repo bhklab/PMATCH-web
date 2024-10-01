@@ -15,9 +15,9 @@ router.post('/news', async (req, res)  => {
 			const news = await News.create(
 				{
 					title: req.body.title,
-					description: req.body.description,
-					date: req.body.date === '' || req.body.date === null ? new Date() : new Date(req.body.date),
-					author: req.body.author
+					newsItems: req.body.newsItems,
+					author: req.body.author,
+					date: req.body.date === '' || req.body.date === null ? new Date() : new Date(req.body.date)
 				}
 			)
 			res.status(200).send(`Successfully inserted news article under the title "${req.body.title}"`);

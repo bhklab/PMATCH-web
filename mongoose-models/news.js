@@ -3,9 +3,12 @@ const Schema = mongoose.Schema;
 
 const newsSchema = new Schema({
     title: String,
-    description: String,
-    date: Date,
+    newsItems: [{ 
+		subtitle: String,
+		description: String
+	}],
 	author: String,
+    date: Date,
 });
 
 const News = mongoose.model('news', newsSchema);

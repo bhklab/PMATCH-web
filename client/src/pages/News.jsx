@@ -10,7 +10,8 @@ import { Accordion, AccordionTab } from 'primereact/accordion';
 import axios from 'axios';
 
 const News = () => {
-    const [newsItems, setNewsItems] = useState([{ title: '', description: '' }]);
+    const [newsItems, setNewsItems] = useState([{ subtitle: '', description: '' }]);
+    const [title, setTitle] = useState('');
     const [author, setAuthor] = useState('');
     const [date, setDate] = useState('');
     const [passcode, setPasscode] = useState('');
@@ -20,6 +21,7 @@ const News = () => {
     const submitNews = async () => {
         try {
             const res = await axios.post('http://localhost:2000/api/news', {
+                title,
                 newsItems,
                 author,
                 date,
@@ -42,7 +44,7 @@ const News = () => {
     };
 
     const addNewsItem = () => {
-        setNewsItems([...newsItems, { title: '', description: '' }]);
+        setNewsItems([...newsItems, { subtitle: '', description: '' }]);
     };
 
     const removeNewsItem = index => {
@@ -50,9 +52,9 @@ const News = () => {
         setNewsItems(updatedItems);
     };
 
-    const handleTitleChange = (index, value) => {
+    const handleSubtitleChange = (index, value) => {
         const updatedItems = [...newsItems];
-        updatedItems[index].title = value;
+        updatedItems[index].subtitle = value;
         setNewsItems(updatedItems);
     };
 
@@ -67,6 +69,11 @@ const News = () => {
             <div className="flex flex-col items-center justify-center bg-white px-60 lg:px-24 smd:px-4 pt-12 pb-32">
                 <h1 className="text-red-1000 text-5xl font-bold mb-14 text-center">News</h1>
                 <div className="flex flex-col gap-6 mb-6 px-20 md:px-0 w-full">
+                    <div className="flex flex-col gap-2">
+                        <h3 className="m-0 font-bold text-headingLg">Title:</h3>
+                        <InputText value={title} onChange={e => setTitle(e.target.value)} />
+                        <p className="text-bodySm m-0 text-gray-500">Enter a title for the news entry.</p>
+                    </div>
                     <h3 className="m-0 font-bold text-headingLg">Description:</h3>
                     {newsItems.map((item, index) => (
                         <div key={index} className="flex flex-col gap-6">
@@ -83,11 +90,11 @@ const News = () => {
                                 </div>
                                 <div className="flex flex-row items-center gap-2 w-full">
                                     <InputText
-                                        value={item.title}
-                                        onChange={e => handleTitleChange(index, e.target.value)}
+                                        value={item.subtitle}
+                                        onChange={e => handleSubtitleChange(index, e.target.value)}
                                         className="w-full"
                                     />
-                                    {item.title === '' && <Message severity="error" text="Required" />}
+                                    {item.subtitle === '' && <Message severity="error" text="Required" />}
                                 </div>
                                 <p className="text-bodySm m-0 text-gray-500">Enter a title for this news entry</p>
                             </div>
@@ -110,15 +117,15 @@ const News = () => {
                         className="bg-red-1000 text-white border-0 p-2 rounded-lg hover:bg-red-700 cursor-pointer text-headingMd ml-10"
                         onClick={addNewsItem}
                         icon="pi pi-plus"
-                        disabled={newsItems.some(item => item.title === '' || item.description === '')}
+                        disabled={newsItems.some(item => item.subtitle === '' || item.description === '')}
                     />
 
                     <div className="flex flex-col gap-2">
                         <h3 className="m-0 font-bold text-headingLg">Author:</h3>
                         <InputText value={author} onChange={e => setAuthor(e.target.value)} />
                         <p className="text-bodySm m-0 text-gray-500">
-                            Enter an author if needed to be specified. If left blank no author will appear in the news
-                            entry
+                            Enter an author if needed to be specified. If left blank "PMATCH team" will appear in the
+                            news entry
                         </p>
                     </div>
 
@@ -126,7 +133,7 @@ const News = () => {
                         <h3 className="m-0 font-bold text-headingLg">Date:</h3>
                         <Calendar value={date} onChange={e => setDate(e.value)} className="w-28 rounded-lg" />
                         <p className="text-bodySm m-0 text-gray-500">
-                            Enter a custom date if needed, otherwise today's current date and time will be used.
+                            Enter a custom date if needed, otherwise select today's date.
                         </p>
                     </div>
 
@@ -134,7 +141,7 @@ const News = () => {
                         <Button
                             className="bg-red-1000 text-white border-0 p-3 rounded-lg hover:bg-red-700 cursor-pointer text-headingMd"
                             onClick={submitNews}
-                            disabled={newsItems.some(item => item.title === '' || item.description === '')}
+                            disabled={newsItems.some(item => item.subtitle === '' || item.description === '')}
                         >
                             Submit
                         </Button>
@@ -148,11 +155,22 @@ const News = () => {
                     <div className="flex flex-col gap-2 my-10">
                         <h3 className="m-0 font-bold text-headingLg">News Preview:</h3>
                         <Accordion activeIndex={0} className="w-full mt-10">
-                            <AccordionTab header={new Date(date).toString().slice(0, 10)} className="w-full">
-                                {newsItems.map((item, index) => (
+                            <AccordionTab header={new Date(date).toString().slice(0, 15)} className="w-full">
+                                <h1 className="text-headingXl font-bold text-black-900 mb-6 text-red-1000">{title}</h1>
+                                {newsItems.map((content, index) => (
                                     <div key={index} className="w-full mb-6">
-                                        <h2 className="text-headingXl font-bold text-black-900 mb-4">{item.title}</h2>
-                                        <p className="text-bodyMd mb-2">{item.description}</p>
+                                        <h2 className="text-headingMd font-bold text-black-900 mb-4">
+                                            {content.subtitle}
+                                        </h2>
+                                        {content.description.split(/\r?\n/).map((line, i) =>
+                                            line === '' ? (
+                                                <br key={i} /> // Render empty lines as <br /> tags to preserve the exact number of empty lines
+                                            ) : (
+                                                <p key={i} className="text-bodyMd mb-2">
+                                                    {line}
+                                                </p>
+                                            ) // Render non-empty lines as paragraphs
+                                        )}
                                     </div>
                                 ))}
                                 <p className="text-bodySm text-gray-700">- {author === '' ? 'PMATCH team' : author}</p>
