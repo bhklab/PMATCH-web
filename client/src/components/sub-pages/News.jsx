@@ -12,7 +12,7 @@ const newsTemplate = news => {
                     <div>
                         <h2 className="text-headingXl font-bold text-black-900 mb-4">{item.title}</h2>
                         <p className="text-bodyMd mb-2">{item.description}</p>
-                        <p className="text-bodySm text-gray-700">- {item.author}</p>
+                        <p className="text-bodySm text-gray-700">- {item.author == '' ? 'PMATCH team' : item.author}</p>
                     </div>
                 </AccordionTab>
             ))}
