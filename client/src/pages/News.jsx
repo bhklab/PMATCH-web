@@ -25,7 +25,7 @@ const News = () => {
 
     const submitNews = async () => {
         try {
-            const res = await axios.post('http://localhost:2000/api/news/add', {
+            const res = await axios.post('/api/news/add', {
                 title,
                 newsItems,
                 author,
@@ -50,7 +50,7 @@ const News = () => {
 
     const deleteNews = async () => {
         try {
-            const res = await axios.post('http://localhost:2000/api/news/delete', {
+            const res = await axios.post('/api/news/delete', {
                 id,
                 passcode
             });
@@ -94,7 +94,7 @@ const News = () => {
     useEffect(() => {
         const getNews = async () => {
             try {
-                const res = await axios.get('http://localhost:2000/api/news');
+                const res = await axios.get('/api/news');
                 console.log(res);
                 setNews(res.data.sort((a, b) => new Date(b.date) - new Date(a.date)));
             } catch (error) {
@@ -226,9 +226,9 @@ const News = () => {
                     </div>
                 </div>
 
-                <h1 className="text-red-1000 text-5xl font-bold mb-14 text-center">Deleting News</h1>
+                <h1 className="text-red-1000 text-5xl font-bold mb-32 mt-60 text-center">Deleting News</h1>
                 <div className="flex flex-col gap-6 w-full">
-                    <Accordion activeIndex={0}>
+                    <Accordion activeIndex={0} className="mb-24">
                         {news.map(item => (
                             <AccordionTab key={item.id} header={item.date.slice(0, 10)}>
                                 <h1 className="text-heading2Xl font-bold text-black-900 mb-6 text-red-1000 ">
