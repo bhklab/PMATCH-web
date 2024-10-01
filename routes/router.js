@@ -8,7 +8,7 @@ router.get('/news', async (req, res)  => {
 	res.send(news)
 });
 
-router.post('/news', async (req, res)  => {
+router.post('/news/add', async (req, res)  => {
 	console.log(req.body);
 	if (req.body.passcode == process.env.PASS){
 		try {
@@ -28,41 +28,26 @@ router.post('/news', async (req, res)  => {
 	else{
 		res.status(401).send('Incorrect passcode, please retry again with the correct passcode');
 	}
+});
 
-
-	// const news = await News.insertMany([
-	// 	{
-	// 		title: "Prioritizer Deployment",
-	// 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
-	// 		date: new Date(),
-	// 		author: "Paul Brogee"
-	// 	},
-	// 	{
-	// 		title: "Matcher Deployment",
-	// 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
-	// 		date: new Date(),
-	// 		author: "Benjamin, Haibe-kains"
-	// 	},
-	// 	{
-	// 		title: "CTIMS Update",
-	// 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
-	// 		date: new Date(),
-	// 		author: "Benjamin, Grant"
-	// 	},
-	// 	{
-	// 		title: "Match Algorithm Update",
-	// 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
-	// 		date: new Date(),
-	// 		author: "Benjamin, Grant"
-	// 	},
-	// 	{
-	// 		title: "New Collaborator Announcement",
-	// 		description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore",
-	// 		date: new Date(),
-	// 		author: "Benjamin, Grant"
-	// 	}
-	// ])
-	// res.send(`inserted ${news.length} documents into news collection`)
+router.post('/news/delete', async (req, res)  => {
+	console.log(req.body);
+	if (req.body.passcode == process.env.PASS){
+		try {
+			const news = await News.deleteOne(
+				{
+					_id: req.body.id
+				}
+			)
+			console.log(news)
+			res.status(200).send(`Successfully delete news article with id ${req.body.id}. Refresh the page to get an updated list`);
+		} catch (error) {
+			res.status(400).send(`Could not delete news article: ${error}`);
+		}
+	}
+	else{
+		res.status(401).send('Incorrect passcode, please retry again with the correct passcode');
+	}
 });
 
 module.exports = router;
