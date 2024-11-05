@@ -136,7 +136,7 @@ const News = () => {
                                     />
                                     {item.subtitle === '' && <Message severity="error" text="Required" />}
                                 </div>
-                                <p className="text-bodySm m-0 text-gray-500">Enter a title for this news entry</p>
+                                <p className="text-bodySm m-0 text-gray-500">Enter a heading for this news entry</p>
                             </div>
                             <div className="flex flex-col gap-2 px-10">
                                 <h3 className="m-0 font-bold text-headingMd">Content {index + 1}:</h3>
@@ -148,7 +148,7 @@ const News = () => {
                                     />
                                     {item.description === '' && <Message severity="error" text="Required" />}
                                 </div>
-                                <p className="text-bodySm m-0 text-gray-500">Enter a description for this news entry</p>
+                                <p className="text-bodySm m-0 text-gray-500">Enter a content for the above heading</p>
                             </div>
                         </div>
                     ))}
