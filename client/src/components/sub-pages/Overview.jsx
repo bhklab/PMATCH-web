@@ -33,8 +33,7 @@ const Overview = () => {
             </div>
             <h2 className="text-headingXl font-bold mb-8">Design & Implementation</h2>
             <p className="text-lg md:text-md mb-10">
-                PMATCH has five parts – CTIMS, OCOGRAPHER, GENOMICS, MATCHER, and VIEWER – that bring together all the
-                information needed for clinical trial matching{' '}
+                PMATCH brings together all the information needed for clinical trial matching{' '}
                 <Link
                     to={'figure-1'}
                     smooth={true}
@@ -45,8 +44,8 @@ const Overview = () => {
                     (Figure 1)
                 </Link>
                 . Clinicians and trialists will use PMATCH directly to match patients to trials and to set trial
-                eligibility rules. Doctors can get alerts or search quickly for trials based on their patients’ health
-                information. Researchers can use patient data to find potential participants for their trials. When a
+                eligibility rules. Doctors will get alerts or search quickly for trials based on their patients’ health
+                information, while researchers can use patient data to find potential participants for their trials. When a
                 patient qualifies for multiple trials, PMATCH will recommend the best one based on available genomic
                 data.
             </p>
