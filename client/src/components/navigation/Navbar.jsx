@@ -36,7 +36,11 @@ const Navbar = () => {
             }`}
         >
             <Link to="landing" smooth={true} duration={700} offset={-325} className="hover:cursor-pointer">
-                <img src="/images/icons/pmatch-logo.png" alt="PMATCH logo" className="w-50" />
+                <img
+                    src={isScrolled ? '/images/icons/pmatch-logo.svg' : '/images/icons/pmatch-logo-white.svg'}
+                    alt="PMATCH logo"
+                    className="w-50"
+                />
             </Link>
             <div className="flex space-x-4">
                 {links.map(link => (
