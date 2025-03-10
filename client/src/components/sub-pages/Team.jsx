@@ -69,7 +69,7 @@ const Team = () => {
                 {teams.map(team => (
                     <button
                         key={team.name}
-                        className="flex flex-col px-10 py-10 md:px-6 md:py-6 shadow-lg gap-8 justify-between items-center border-solid border-1 rounded-lg w-[275px] h-[275px] transition duration-500 hover:scale-110 hover:cursor hover:border-red-1000 hover:shadow-red-1000"
+                        className="flex flex-col px-10 py-10 md:px-6 md:py-6 shadow-lg gap-8 justify-between items-center border-solid border-1 rounded-lg w-[275px] h-[275px] transition duration-500 hover:scale-110 hover:cursor hover:border-red-1000 hover:shadow-red-1000 bg-white"
                         onClick={() => openModal(team)}
                     >
                         <div className="h-[220px] w-72 px-12 flex flex-col justify-center items-center">
@@ -88,7 +88,7 @@ const Team = () => {
             <div className="flex flex-row sm:flex-col gap-8 justify-center items-center text-center flex-wrap">
                 {support.map(team => (
                     <a href={team.link} target="_blank" key={team.name}>
-                        <div className="flex flex-col px-10 py-10 md:px-6 md:py-6 shadow-lg gap-8 justify-between items-center border-solid border-1 rounded-lg w-[275px] h-[275px] transition duration-500 hover:scale-110 hover:cursor hover:border-red-1000 hover:shadow-red-1000">
+                        <div className="flex flex-col px-10 py-10 md:px-6 md:py-6 shadow-lg gap-8 justify-between items-center border-solid border-1 rounded-lg w-[275px] h-[275px] transition duration-500 hover:scale-110 hover:cursor hover:border-red-1000 hover:shadow-red-1000 bg-white">
                             <div className="h-48 w-72 px-12 flex flex-col justify-center items-center">
                                 <img src={team.img} alt={team.name} className="max-h-full max-w-full shadow-2" />
                             </div>

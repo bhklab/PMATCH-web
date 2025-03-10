@@ -22,7 +22,7 @@ const Overview = () => {
             <div className="flex flex-row sm:flex-col gap-8 justify-center items-center text-center flex-wrap mb-12">
                 {overview.map((item, index) => (
                     <div
-                        className="flex flex-col px-10 py-10 md:px-6 md:py-6 shadow-lg gap-4 justify-center items-center border-solid border-1 rounded-lg w-[275px] h-[275px]"
+                        className="flex flex-col px-10 py-10 md:px-6 md:py-6 shadow-lg gap-4 justify-center items-center border-solid border-1 rounded-lg w-[275px] h-[275px] bg-white"
                         key={item.image}
                     >
                         <p className="text-headingXl font-semibold">{index + 1}.</p>
@@ -45,9 +45,9 @@ const Overview = () => {
                 </Link>
                 . Clinicians and trialists will use PMATCH directly to match patients to trials and to set trial
                 eligibility rules. Doctors will get alerts or search quickly for trials based on their patients’ health
-                information, while researchers can use patient data to find potential participants for their trials. When a
-                patient qualifies for multiple trials, PMATCH will recommend the best one based on available genomic
-                data.
+                information, while researchers can use patient data to find potential participants for their trials.
+                When a patient qualifies for multiple trials, PMATCH will recommend the best one based on available
+                genomic data.
             </p>
             <h2 className="text-headingXl font-bold mb-8">Long Term Vision & Future Developments</h2>
             <p className="text-lg">
@@ -56,8 +56,8 @@ const Overview = () => {
                 centers. In the future, patients may be able to use PMATCH directly to learn about trials they could
                 join, allowing them to make the most of their time spent with doctors.
             </p>
-            <div className="w-full py-10" id="figure-1">
-                <img src="/images/diagrams/workflow-diagram.jpg" className="w-full" />
+            <div className="w-full py-10 my-10 rounded shadow-md border-1" id="figure-1">
+                <img src="/images/diagrams/workflow-diagram.png" className="w-full" />
             </div>
         </div>
     );
