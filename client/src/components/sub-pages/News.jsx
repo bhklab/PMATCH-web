@@ -9,7 +9,7 @@ const newsTemplate = news => {
         <Accordion activeIndex={0}>
             {news.map(item => (
                 <AccordionTab key={item.id} header={item.date.slice(0, 10)}>
-                    <h1 className="text-heading2Xl font-bold text-black-900 mb-6 text-red-1000 ">{item.title}</h1>
+                    <h1 className="text-heading2Xl font-bold mb-6 text-red-1100 ">{item.title}</h1>
                     {item.newsItems.map((content, index) => (
                         <div key={index} className="w-full mb-6">
                             <h2 className="text-headingMd font-bold text-black-900 mb-4">{content.subtitle}</h2>
@@ -53,7 +53,7 @@ const News = () => {
             className="pt-14 pb-24 px-32 md:px-20 sm:px-4 flex flex-col justify-center items-center rounded-lg"
             id="news"
         >
-            <h1 className="text-red-1000 text-5xl font-bold mb-14 text-center">News</h1>
+            <h1 className="text-red-1100 text-5xl font-bold mb-14 text-center">News</h1>
             {news.length > 0 ? (
                 <VirtualScroller
                     items={news}

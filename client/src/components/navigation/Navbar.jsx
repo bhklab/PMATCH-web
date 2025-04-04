@@ -30,16 +30,16 @@ const Navbar = () => {
     }, []);
 
     return (
-        <div
-            className={`fixed top-0 z-20 w-full px-16 md:px-1 py-3 border-b-1 duration-300 ease-in-out flex flex-row items-center justify-between ${
-                isScrolled ? 'bg-white shadow-xl' : 'bg-transparent border-none'
-            }`}
-        >
+        <div className="fixed top-0 z-20 w-full px-16 md:px-1 py-3 border-b-1 duration-300 ease-in-out flex flex-row items-center justify-between shadow-xl bg-transparent border-none">
             <Link to="landing" smooth={true} duration={700} offset={-325} className="hover:cursor-pointer">
                 <img
-                    src={isScrolled ? '/images/icons/pmatch-logo.svg' : '/images/icons/pmatch-logo-white.svg'}
+                    src={
+                        isScrolled
+                            ? '/images/pmatch-logos-and-icons/pmatch-icon-red.png'
+                            : '/images/pmatch-logos-and-icons/pmatch-icon-red.png'
+                    }
                     alt="PMATCH logo"
-                    className="w-50"
+                    className="w-10 rounded"
                 />
             </Link>
             <div className="flex space-x-4">
@@ -50,8 +50,8 @@ const Navbar = () => {
                         smooth={true}
                         duration={500}
                         offset={-75}
-                        className={`hover:text-red-1000 cursor-pointer ${
-                            activeLink === link ? 'text-red-1000' : isScrolled ? 'text-black-900' : 'text-white'
+                        className={`hover:text-red-1100 cursor-pointer ${
+                            activeLink === link ? 'text-red-1100' : isScrolled ? 'text-black-900' : 'text-black-900'
                         }`}
                         onSetActive={() => handleSetActive(link)}
                     >

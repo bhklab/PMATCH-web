@@ -107,7 +107,7 @@ const News = () => {
     return (
         <div>
             <div className="flex flex-col items-center justify-center bg-white px-60 lg:px-24 smd:px-4 pt-12 pb-32">
-                <h1 className="text-red-1000 text-5xl font-bold mb-14 text-center">Adding News</h1>
+                <h1 className="text-red-1100 text-5xl font-bold mb-14 text-center">Adding News</h1>
                 <div className="flex flex-col gap-6 mb-6 px-20 md:px-0 w-full">
                     <div className="flex flex-col gap-2">
                         <h3 className="m-0 font-bold text-headingLg">Title:</h3>
@@ -123,7 +123,7 @@ const News = () => {
                                     {index > 0 && (
                                         <Button
                                             icon="pi pi-minus"
-                                            className="bg-red-1000 text-white border-0 p-2 rounded-lg hover:bg-red-700 cursor-pointer text-headingMd"
+                                            className="bg-red-1100 text-white border-0 p-2 rounded-lg hover:bg-red-700 cursor-pointer text-headingMd"
                                             onClick={() => removeNewsItem(index)}
                                         />
                                     )}
@@ -154,7 +154,7 @@ const News = () => {
                     ))}
 
                     <Button
-                        className="bg-red-1000 text-white border-0 p-2 rounded-lg hover:bg-red-700 cursor-pointer text-headingMd ml-10"
+                        className="bg-red-1100 text-white border-0 p-2 rounded-lg hover:bg-red-700 cursor-pointer text-headingMd ml-10"
                         onClick={addNewsItem}
                         icon="pi pi-plus"
                         disabled={newsItems.some(item => item.subtitle === '' || item.description === '')}
@@ -180,7 +180,7 @@ const News = () => {
                     <div className="flex flex-col justify-left w-full gap-2">
                         <div className="flex flex-row gap-2 justify-left items-center w-full">
                             <Button
-                                className="bg-red-1000 text-white border-0 p-3 rounded-lg hover:bg-red-700 cursor-pointer text-headingMd"
+                                className="bg-red-1100 text-white border-0 p-3 rounded-lg hover:bg-red-700 cursor-pointer text-headingMd"
                                 onClick={submitNews}
                                 disabled={newsItems.some(item => item.subtitle === '' || item.description === '')}
                             >
@@ -202,7 +202,7 @@ const News = () => {
                         <h3 className="m-0 font-bold text-headingLg">News Preview:</h3>
                         <Accordion activeIndex={0} className="w-full mt-10">
                             <AccordionTab header={new Date(date).toString().slice(0, 15)} className="w-full">
-                                <h1 className="text-headingXl font-bold text-black-900 mb-6 text-red-1000">{title}</h1>
+                                <h1 className="text-headingXl font-bold mb-6 text-red-1100">{title}</h1>
                                 {newsItems.map((content, index) => (
                                     <div key={index} className="w-full mb-6">
                                         <h2 className="text-headingMd font-bold text-black-900 mb-4">
@@ -226,14 +226,12 @@ const News = () => {
                     </div>
                 </div>
 
-                <h1 className="text-red-1000 text-5xl font-bold mb-32 mt-60 text-center">Deleting News</h1>
+                <h1 className="text-red-1100 text-5xl font-bold mb-32 mt-60 text-center">Deleting News</h1>
                 <div className="flex flex-col gap-6 w-full">
                     <Accordion activeIndex={0} className="mb-24">
                         {news.map(item => (
                             <AccordionTab key={item.id} header={item.date.slice(0, 10)}>
-                                <h1 className="text-heading2Xl font-bold text-black-900 mb-6 text-red-1000 ">
-                                    {item.title}
-                                </h1>
+                                <h1 className="text-heading2Xl font-bold mb-6 text-red-1100 ">{item.title}</h1>
                                 {item.newsItems.map((content, index) => (
                                     <div key={index} className="w-full mb-6">
                                         <h2 className="text-headingMd font-bold text-black-900 mb-4">
@@ -276,7 +274,7 @@ const News = () => {
                     <div className="flex flex-col justify-left w-full gap-2">
                         <div className="flex flex-row gap-2 justify-left items-center w-full">
                             <Button
-                                className="bg-red-1000 text-white border-0 p-3 rounded-lg hover:bg-red-700 cursor-pointer text-headingMd"
+                                className="bg-red-1100 text-white border-0 p-3 rounded-lg hover:bg-red-700 cursor-pointer text-headingMd"
                                 onClick={deleteNews}
                                 disabled={id === ''}
                             >

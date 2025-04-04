@@ -26,7 +26,8 @@ module.exports = {
                     900: '#212121'
                 },
                 red: {
-                    1000: '#871313'
+                    1000: '#871313',
+                    1100: '#E94949'
                 },
                 white: '#ffffff',
                 colors: '#edf3faff',
