@@ -26,7 +26,8 @@ module.exports = {
                     900: '#212121'
                 },
                 red: {
-                    1000: '#871313'
+                    1000: '#871313',
+                    1100: '#E94949'
                 },
                 white: '#ffffff',
                 colors: '#edf3faff',
@@ -46,14 +47,18 @@ module.exports = {
             },
             fontFamily: { inter: 'Inter' },
             fontSize: {
-                heading3Xl: ['32px', '36px'],
+                heading4Xl: ['40px', '48px'],
+                heading3Xl: ['32px', '40px'],
                 heading2Xl: ['28px', '32px'],
                 headingXl: ['24px', '28px'],
                 headingLg: ['20px', '24px'],
                 headingMd: ['16px', '20px'],
                 headingSm: ['14px', '16px'],
+                headingXs: ['12px', '16px'],
+                bodyLg: ['16px', '24px'],
                 bodyMd: ['14px', '20px'],
-                bodySm: ['12px', '16px']
+                bodySm: ['12px', '18px'],
+                bodyXs: ['11px', '14px']
             },
             boxShadow: {
                 card: '0px 2px 1px 0px #0000000d',

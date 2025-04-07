@@ -3,10 +3,10 @@ import React from 'react';
 const Mission = () => {
     return (
         <div
-            className="flex flex-col items-center justify-center bg-white px-60 lg:px-24 smd:px-4 pt-12 pb-32"
+            className="flex flex-col items-center justify-center min-h-screen bg-white px-60 lg:px-24 smd:px-4 pt-12 pb-32"
             id="mission"
         >
-            <h1 className="text-red-1000 text-5xl font-bold mb-14 text-center">Transforming Cancer Care</h1>
+            <h1 className="text-red-1100 text-5xl font-bold mb-14 text-center">Transforming Cancer Care</h1>
             <p className="text-lg text-center">
                 <span className="font-bold text-xl">Our mission</span> with the PMATCH project is to help people with
                 cancer get access to advanced treatment options by making it easier to find suitable clinical trials.
