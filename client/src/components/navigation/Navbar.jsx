@@ -46,7 +46,7 @@ const Navbar = () => {
                         duration={500}
                         offset={-50}
                         activeClass="text-red-1100 scale-110"
-                        className="hover:text-red-1100 ease-in-out duration-300 hover:cursor-pointer hover:scale-110 font-semibold text-black-900 text-bodyXl"
+                        className="hover:text-red-1100 ease-in-out duration-300 hover:cursor-pointer hover:scale-110 font-semibold text-black-900 text-headingMd"
                     >
                         {link[0].toUpperCase() + link.substring(1)}
                     </Link>
