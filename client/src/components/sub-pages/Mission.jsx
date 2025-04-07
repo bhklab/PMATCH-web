@@ -3,7 +3,7 @@ import React from 'react';
 const Mission = () => {
     return (
         <div
-            className="flex flex-col items-center justify-center bg-white px-60 lg:px-24 smd:px-4 pt-12 pb-32"
+            className="flex flex-col items-center justify-center min-h-screen bg-white px-60 lg:px-24 smd:px-4 pt-12 pb-32"
             id="mission"
         >
             <h1 className="text-red-1100 text-5xl font-bold mb-14 text-center">Transforming Cancer Care</h1>
