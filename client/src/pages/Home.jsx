@@ -15,9 +15,9 @@ const Home = () => {
             <Landing />
             <Break image="puzzle-new-1-test.png" />
             <Mission />
-            <Break image="puzzle-new-2-test.png" />
-            <Overview />
             <Break image="puzzle-new-3-test.png" />
+            <Overview />
+            <Break image="puzzle-new-2-test.png" />
             <Team />
             <Break image="puzzle-new-4-test.png" />
             <News />
