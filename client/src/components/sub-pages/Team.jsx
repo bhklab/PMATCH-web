@@ -27,12 +27,19 @@ const Team = () => {
                 'The Pugh Lab, headed by Dr. Trevor Pugh, is focused on the applications of genome sequencing analysis as a routine clinical test and understanding clinical implications of clonal shifts in cancer and non-cancerous cell populations during treatment, most recently using cell-free DNA, immune repertoire, and single cell RNA-seq sequencing.'
         },
         {
-            name: 'Wang Lab',
-            img: '/images/teams/wang-lab.png',
-            link: 'https://wanglab.ai/',
+            name: 'UHN AI Hub',
+            img: '/images/teams/ai-hub.png',
+            link: 'https://uhnhub.ai/',
             description:
-                'The Wang Lab, headed by Dr. Bo Wang, develops integrative and interpretable machine learning algorithms that can help clinicians with predictive models and decision support to tailor patients’ care to their unique clinical and genomic traits.'
+                'The UHN AI Hub is a collaborative centre dedicated to healthcare innovation through advancements in AI technologies and their applications for high quality patient care.'
         }
+        // {
+        //     name: 'Wang Lab',
+        //     img: '/images/teams/wang-lab.png',
+        //     link: 'https://wanglab.ai/',
+        //     description:
+        //         'The Wang Lab, headed by Dr. Bo Wang, develops integrative and interpretable machine learning algorithms that can help clinicians with predictive models and decision support to tailor patients’ care to their unique clinical and genomic traits.'
+        // }
     ];
 
     const support = [
@@ -50,6 +57,11 @@ const Team = () => {
             name: 'Terry Fox Research Institute',
             img: '/images/support/TFRI.png',
             link: 'https://www.tfri.ca/'
+        },
+        {
+            name: 'The Bank of Montreal',
+            img: '/images/support/bmo.svg',
+            link: 'https://www.bmo.com/'
         }
     ];
 
